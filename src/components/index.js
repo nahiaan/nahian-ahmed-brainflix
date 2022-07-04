@@ -1,0 +1,10 @@
+// import Header from "./components/Header/Header";
+// import "./styles/main.scss";
+// import "./styles/partials/_resets.scss";
+// import MainVideo from "./components/MainVideo/MainVideo";
+// import VideoDetails from "./components/VideoDetails/VideoDetails";
+// import CommentSection from "./components/CommentSection/CommentSection";
+// import SideVideos from "./components/SideVideos/SideVideos";
+// import VideoContent from "./Data/videos.json";
+// import MainVideoContent from "./Data/video-details.json";
+// import React, { Component } from "react";

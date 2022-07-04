@@ -1,0 +1,61 @@
+@mixin button-template {
+  background-color: $BrainFlix-Blue;
+  color: $Alabaster;
+  border-radius: 0.3rem;
+  border: 1px solid $BrainFlix-Blue;
+  font-size: 1.3rem;
+  font-family: "AvenirNext-bold";
+  width: 50vw;
+  height: 8vh;
+  letter-spacing: 1px;
+}
+
+@mixin input-box {
+  background-color: $Alabaster;
+  width: 20vw;
+  height: 8vh;
+  border: solid 1.5px rgba($color: #000000, $alpha: 0.1);
+  border-radius: 5px;
+  font-size: 1.2rem;
+}
+
+@mixin thumbnail-template {
+  width: 180px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin: 1.5rem;
+}
+
+@mixin divider-template {
+  width: 80%;
+  margin: 1.5rem 0 1.5rem 0;
+  border: 0.9px solid $Mercury;
+  background-color: $Mercury;
+}
+
+@mixin margin-styling {
+  margin: 1.5rem;
+}
+//colours
+$BrainFlix-Black: #323232;
+$BrainFlix-DarkBlack: #000000;
+$BrainFlix-Blue: #0095ff;
+$BrainFlix-DarkBlue: #0065ad;
+$Silver: #afafaf;
+
+$White: #ffffff;
+$Mercury: #e1e1e1;
+$Alabaster: #fafafa;
+
+@font-face {
+  font-family: "AvenirNext-bold";
+  src: url(../../assets/Font/AvenirNextLTPro-Demi.otf);
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "AvenirNext-regular";
+  src: url(../../assets/Font/AvenirNextLTPro-Regular.otf);
+  font-weight: 400;
+}

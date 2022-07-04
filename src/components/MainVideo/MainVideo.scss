@@ -1,5 +1,25 @@
+@import "../../styles/partials/templates";
+@import "../../styles/partials/breakpoints";
+@import "../../styles/partials/resets";
+
 .video {
-  width: 500px;
-  height: 500px;
-  background-color: blue;
+  width: 100vw;
+  max-height: 410px;
+  object-fit: cover;
+
+  @include desktop {
+    width: 70vw;
+    max-height: 570px;
+    margin-left: 14rem;
+  }
+
+  @include tablet {
+    width: 90vw;
+    margin-left: 4rem;
+    max-height: 600px;
+  }
+}
+
+.video__container {
+  background-color: $BrainFlix-DarkBlack;
 }

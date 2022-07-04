@@ -1,0 +1,48 @@
+@import "../../styles/partials/templates";
+@import "../../styles/partials/breakpoints";
+@import "../../styles/partials/resets";
+
+.side-videos {
+  margin-left: 1rem;
+  &__img {
+    @include thumbnail-template;
+    flex-shrink: 0;
+    @include desktop {
+      width: 130px;
+      height: 80px;
+    }
+  }
+
+  &__channel {
+    @include desktop {
+      font-size: 0.9rem;
+    }
+  }
+
+  &__container {
+    display: flex;
+  }
+
+  &__title {
+    font-family: "AvenirNext-bold";
+    padding-bottom: 1rem;
+
+    @include desktop {
+      font-size: 1rem;
+    }
+  }
+
+  &__wrapper {
+    align-self: center;
+    font-size: 1rem;
+  }
+
+  &__subtitle {
+    color: silver;
+    font-family: "AvenirNext-bold";
+
+    @include desktop {
+      margin: 4rem 0 0 1.5rem;
+    }
+  }
+}

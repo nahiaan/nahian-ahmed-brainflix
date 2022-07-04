@@ -1,0 +1,17 @@
+@import "../src/styles/partials/templates";
+@import "../src/styles/partials/breakpoints";
+@import "../src/styles/partials/resets";
+
+@include desktop {
+  .body {
+    display: flex;
+
+    &-inner__wrapper {
+      width: 70%;
+
+      @include desktop {
+        border-right: solid $Mercury;
+      }
+    }
+  }
+}

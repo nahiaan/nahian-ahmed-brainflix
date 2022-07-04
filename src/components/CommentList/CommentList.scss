@@ -1,0 +1,58 @@
+@import "../../styles/partials/templates";
+@import "../../styles/partials/breakpoints";
+@import "../../styles/partials/resets";
+
+.commentList {
+  @include margin-styling;
+  font-size: 1.1rem;
+  color: $Mercury;
+  line-height: 2rem;
+  @include desktop {
+    font-size: 0.8rem;
+    line-height: 1.5rem;
+  }
+  &-img__wrapper {
+    background-image: url(../../assets/Images/light-grey-background.png);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-position: center center;
+    background-size: cover;
+    margin-bottom: auto;
+
+    @include desktop {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  &__container {
+    display: flex;
+    padding: 1.5rem 1rem 1rem 0;
+    border-bottom: 0.8px solid $Mercury;
+    border-top: 0.8px solid $Mercury;
+  }
+
+  &__wrapper {
+    padding-left: 2rem;
+  }
+
+  &-inner__wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+  }
+  &__author {
+    font-family: "AvenirNext-Bold";
+    font-size: 1.4rem;
+    color: $BrainFlix-Black;
+  }
+
+  &__date {
+    color: silver;
+  }
+
+  &-img__wrapper {
+    flex-shrink: 0;
+  }
+}

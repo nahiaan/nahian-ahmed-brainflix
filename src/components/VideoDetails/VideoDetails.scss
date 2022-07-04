@@ -1,0 +1,142 @@
+@import "../../styles/partials/templates";
+@import "../../styles/partials/breakpoints";
+@import "../../styles/partials/resets";
+
+.body {
+  &-inner__wrapper {
+    @include desktop {
+      padding: 2rem 0 0 7rem;
+    }
+  }
+}
+
+.video-details {
+  @include margin-styling;
+  &__title {
+    font-size: 2.5rem;
+    line-height: 3.5rem;
+  }
+
+  @include desktop {
+    &__container {
+      display: flex;
+      border-bottom: solid $Mercury;
+      margin: 1rem 0;
+    }
+  }
+
+  @include tablet {
+    &__container {
+      display: flex;
+      border-bottom: solid $Mercury;
+      margin: 1rem 0;
+    }
+  }
+
+  &__channel {
+    letter-spacing: 0.5px;
+
+    @include desktop {
+      margin-right: 0;
+      width: 150px;
+    }
+
+    @include tablet {
+      margin-right: 0;
+      width: 150px;
+    }
+  }
+
+  &__wrapper--inner {
+    display: flex;
+    padding: 0 0 0.5rem 0;
+    font-size: 1.4rem;
+    justify-content: space-between;
+
+    @include desktop {
+      margin-left: 0;
+      font-size: 1rem;
+    }
+  }
+
+  &__divider {
+    @include divider-template;
+    width: 89vw;
+
+    @include desktop {
+      display: none;
+    }
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__info {
+    margin-right: 9rem;
+
+    @include desktop {
+      margin: 0 0 0 9rem;
+    }
+
+    @include tablet {
+      margin: 0 20rem 0 1rem;
+    }
+  }
+
+  &__info,
+  &__date {
+    color: $Silver;
+    letter-spacing: 0.5px;
+  }
+  @include desktop {
+    &__info {
+      margin-left: 1rem;
+    }
+
+    @include tablet {
+      &__info {
+        margin-left: 1rem;
+      }
+    }
+  }
+
+  @include desktop {
+    &__date {
+      display: none;
+    }
+  }
+
+  @include mobile {
+    &__date2 {
+      display: none;
+    }
+  }
+
+  @include tablet {
+    &__date2 {
+      display: none;
+    }
+  }
+
+  &__date2 {
+    margin-right: 25rem;
+    color: $Silver;
+  }
+  //AvenirNext-Bold styling
+  &__channel,
+  &__title {
+    font-family: "AvenirNext-Bold";
+  }
+
+  &__description {
+    font-size: 1.4rem;
+    line-height: 1.9rem;
+
+    @include desktop {
+      margin-top: 2rem;
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+  }
+}

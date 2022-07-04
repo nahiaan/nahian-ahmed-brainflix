@@ -1,8 +1,16 @@
 import "./MainVideo.scss";
 
-const MainVideo = () => {
+const MainVideo = (props) => {
+  console.log(props);
   return (
-    <video className="video" src="https://i.imgur.com/l2Xfgpl.jpg"></video>
+    <section className="video__container">
+      <video
+        poster={props.mainVideoInfo.image}
+        controls
+        className="video"
+        src={props.mainVideoInfo.video}
+      ></video>
+    </section>
   );
 };
 

@@ -1,8 +1,130 @@
+@import "../../styles/partials/templates";
+@import "../../styles/partials/breakpoints";
+@import "../../styles/partials/resets";
+
 .header {
-  background-color: red;
+  @include margin-styling;
+  display: flex;
+  flex-direction: column;
+  @include tablet {
+    margin: 1.2rem 0 0 0;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  @include desktop {
+    margin: 1.2rem 0 0 0;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__wrapper {
+    display: flex;
+    @include tablet {
+      padding-left: 5rem;
+    }
+    @include desktop {
+      padding-left: 5rem;
+    }
+  }
+
+  &__logo {
+    width: 205px;
+    height: auto;
+    padding-bottom: 1rem;
+    align-self: center;
+
+    @include tablet {
+      width: 150px;
+      margin: 0 0 0 2rem;
+    }
+
+    @include desktop {
+      width: 150px;
+      margin: 0 0 0 2rem;
+    }
+  }
+
+  &__search {
+    @include input-box;
+    margin: 0.5rem 0 1.5rem 0;
+    width: 90%;
+    height: 7vh;
+    @include tablet {
+      margin: 0 0 0.5rem 4rem;
+      width: 31vw;
+      height: 8vh;
+    }
+
+    @include desktop {
+      margin: 0 0 0.5rem 4rem;
+      width: 31vw;
+      height: 8vh;
+    }
+  }
+
+  &__btn {
+    @include button-template;
+    // margin: 0 0 1rem 1.5rem;
+    font-family: "AvenirNext-bold";
+    width: 90vw;
+    height: 7vh;
+    @include tablet {
+      width: 20vw;
+      height: 8vh;
+      font-size: 1rem;
+      margin: 0 0 0 1.5rem;
+    }
+
+    @include desktop {
+      width: 20vw;
+      height: 8vh;
+      font-size: 1rem;
+      margin: 0 0 0 1.5rem;
+    }
+  }
+
   &__img {
-    width: 50px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
+    object-fit: cover;
+    align-self: center;
+    margin: 0 0 1.5rem 1rem;
+
+    @include tablet {
+      display: none;
+    }
+
+    @include desktop {
+      display: none;
+    }
+  }
+  @include tablet {
+    &__img2 {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      align-self: center;
+      margin: 0 3rem 1.5rem 1rem;
+    }
+  }
+
+  @include desktop {
+    &__img2 {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      align-self: center;
+      margin: 0 3rem 1.5rem 1rem;
+    }
+  }
+
+  @include mobile {
+    &__img2 {
+      display: none;
+    }
   }
 }

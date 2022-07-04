@@ -1,0 +1,118 @@
+@import "../../styles/partials/templates";
+@import "../../styles/partials/breakpoints";
+@import "../../styles/partials/resets";
+
+.comment__name--input,
+.comment__text--input {
+  background-color: $Alabaster;
+  width: 80vw;
+  border: solid 2px rgba($color: #000000, $alpha: 0.1);
+  border-radius: 5px;
+  font-size: 2rem;
+
+  @include desktop {
+    width: 40vw;
+  }
+}
+
+@include desktop {
+  .comment__name,
+  .comment__box {
+    display: none;
+  }
+}
+
+.comment__name--input {
+  height: 8vh;
+  margin-bottom: 1rem;
+
+  @include desktop {
+    width: 28vw;
+    margin-right: 2rem;
+    height: 7vh;
+  }
+}
+
+.comment__text--input {
+  height: 22vh;
+  margin-bottom: 2rem;
+  padding-top: 1rem;
+
+  @include desktop {
+    display: none;
+  }
+}
+
+.comment__content {
+  display: flex;
+  justify-content: center;
+  border: 0;
+
+  // @include desktop {
+  //   display: flex;
+  // }
+}
+
+.comment-form__wrapper {
+  display: flex;
+  flex-direction: column;
+  font-family: avenirnext-bold;
+  color: white;
+  padding-left: 1rem;
+
+  @include desktop {
+    flex-direction: row;
+  }
+}
+
+.comment-img__container {
+  background-image: url(/assets/Images/Mohan-muruge.jpg);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-position: center center;
+  background-size: cover;
+  margin-top: 2rem;
+
+  @include desktop {
+    margin-top: 0;
+    margin-right: 2rem;
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.comment__button {
+  @include button-template;
+  font-size: 1.3rem;
+  height: 7vh;
+
+  @include desktop {
+    width: 10vw;
+    font-size: 0.8rem;
+    height: 7vh;
+  }
+}
+
+@include desktop {
+  .form__title {
+    margin: 0 0 0.5rem 11rem;
+    color: $Silver;
+    font-family: "avenirnext-bold";
+    font-size: 0.9rem;
+  }
+}
+@include desktop {
+  .form__box {
+    margin-top: 3rem;
+  }
+}
+::placeholder {
+  color: $BrainFlix-Black;
+  padding-left: 10px;
+  font-size: 1.3rem;
+
+  @include desktop {
+    font-size: 1rem;
+  }
+}

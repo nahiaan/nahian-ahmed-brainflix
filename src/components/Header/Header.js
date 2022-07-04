@@ -6,9 +6,18 @@ const Header = () => {
   return (
     <header className="header">
       <img className="header__logo" src={logo} alt="brainflix logo" />
-      <input className="header__search" type="text" name="search" id="search" />
-      <button className="header__btn">Upload</button>
-      <img className="header__img" src={profilePic} alt="profile of user" />
+      <div className="header__wrapper">
+        <input
+          className="header__search"
+          type="text"
+          name="search"
+          id="search"
+          placeholder="Search"
+        />
+        <img className="header__img" src={profilePic} alt="profile of user" />
+      </div>
+      <button className="header__btn">UPLOAD</button>
+      <img className="header__img2" src={profilePic} alt="profile of user" />
     </header>
   );
 };
