@@ -41,6 +41,8 @@ export default class App extends Component {
     const mainVideo = this.state.mainVideoinfo.find(
       (video) => video.id === this.state.mainVideoId
     );
+    //variable  that takes a higher order funct
+    //.find is a method that goes through an array of objects, array of videos, looking at the key of each object. function will return the object that matches that
     return (
       <div>
         <div>
