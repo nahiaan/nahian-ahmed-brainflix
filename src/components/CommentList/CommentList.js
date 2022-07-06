@@ -12,7 +12,7 @@ export const CommentList = (props) => {
         const month = date.getMonth();
         const year = date.getFullYear();
         return (
-          <div className="commentList__container" key={comment.id}>
+          <article key={comment.id} className="commentList__container">
             <div className="commentList-img__wrapper">
               <img />
             </div>
@@ -21,11 +21,9 @@ export const CommentList = (props) => {
                 <h3 className="commentList__author">{comment.name}</h3>
                 <h3 className="commentList__date">{`${day}/${month}/${year}`}</h3>
               </div>
-              <h3 key={comment.id} className="commentList__content">
-                {comment.comment}
-              </h3>
+              <h3 className="commentList__content">{comment.comment}</h3>
             </div>
-          </div>
+          </article>
         );
       })}
     </section>

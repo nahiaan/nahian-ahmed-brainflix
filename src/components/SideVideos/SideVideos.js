@@ -25,7 +25,7 @@ export const SideVideos = (props) => {
   return (
     <section className="side-videos">
       <>
-        <h3 className="side-videos__subtitle">NEXT VIDEOS</h3>
+        <h3 className="side-videos__subtitle">Next Videos</h3>
       </>
       {filteredVideoList.map((videoInfo) => {
         const videoId = videoInfo.id;
@@ -35,6 +35,7 @@ export const SideVideos = (props) => {
             onClick={(event) => props.clickHandler(event)}
             className="side-videos__container"
             id={videoId}
+            key={videoInfo.id}
           >
             <img
               className="side-videos__img"
