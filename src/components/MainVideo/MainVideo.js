@@ -1,7 +1,7 @@
 import "./MainVideo.scss";
 
 const MainVideo = (props) => {
-  console.log("mainvideo", props);
+  // console.log("mainvideo", props);
   return (
     <section className="video__container">
       <video

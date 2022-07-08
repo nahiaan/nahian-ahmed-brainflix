@@ -2,12 +2,12 @@ import React from "react";
 import "./CommentList.scss";
 
 export const CommentList = (props) => {
-  console.log(props);
+  // console.log(props);
 
   return (
     <section className="commentList">
       {props.mainVideoInfo.comments.map((comment) => {
-        const date = new Date(props.mainVideoInfo.comments.timestamp);
+        const date = new Date(comment.timestamp);
         const day = date.getDate();
         const month = date.getMonth();
         const year = date.getFullYear();

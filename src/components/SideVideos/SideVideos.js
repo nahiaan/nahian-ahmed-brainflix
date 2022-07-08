@@ -1,26 +1,14 @@
 import "./SideVideos.scss";
 import React from "react";
+import { Link } from "react-router-dom";
 
 export const SideVideos = (props) => {
-  console.log(props);
-  //   console.log(props.sideVideoList);
-  // const handleClick = (event, message) => {
-  //   console.log(event.target);
-  //   console.log(message);
-  //   console.log("image was clicked");
-  // };
-
   // Filter all the videos to exclude the main video
   const filteredVideoList = props.sideVideoList.filter((video) => {
-    // console.log(video);
-    // console.log(video.id);
-    // console.log(props.mainVideoId);
-
     // If the video is NOT the same as the main video ID - Keep it.
     return video.id !== props.mainVideoId;
   });
   //filter is a higher order function and takes a callback function as an argument.
-  // console.log(filteredVideoList);
 
   return (
     <section className="side-videos">
@@ -31,17 +19,14 @@ export const SideVideos = (props) => {
         const videoId = videoInfo.id;
 
         return (
-          <div
-            onClick={(event) => props.clickHandler(event)}
-            className="side-videos__container"
-            id={videoId}
-            key={videoInfo.id}
-          >
-            <img
-              className="side-videos__img"
-              id={videoId}
-              src={videoInfo.image}
-            />
+          <div className="side-videos__container" id={videoId} key={videoId}>
+            <Link to={`/video/${videoInfo.id}`}>
+              <img
+                className="side-videos__img"
+                id={videoId}
+                src={videoInfo.image}
+              />
+            </Link>
             <div className="side-videos__wrapper" id={videoId}>
               <h3 className="side-videos__title" id={videoId}>
                 {videoInfo.title}

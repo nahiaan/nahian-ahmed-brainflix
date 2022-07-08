@@ -1,0 +1,9 @@
+@import "../../styles/main";
+@import "../../styles/partials/_resets";
+@import "../../styles/partials/templates";
+
+.form__img {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+}
