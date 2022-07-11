@@ -5,8 +5,6 @@ import MainVideo from "../../components/MainVideo/MainVideo";
 import VideoDetails from "../../components/VideoDetails/VideoDetails";
 import CommentSection from "../../components/CommentSection/CommentSection";
 import SideVideos from "../../components/SideVideos/SideVideos";
-// import videoContent from "../../Data/videos.json";
-// import mainVideoContent from "../../Data/video-details.json";
 import React, { Component } from "react";
 import CommentList from "../../components/CommentList/CommentList";
 import "../../App.scss";
@@ -39,8 +37,6 @@ export default class HomePage extends Component {
             `https://project-2-api.herokuapp.com/videos/${id}/?api_key=ffe0d61d-b430-491d-9649-c096b1d32fd3`
           )
           .then((response) => {
-            // console.log("get request2", response);
-
             this.setState({
               mainVideo: response.data,
             });
@@ -149,7 +145,7 @@ export default class HomePage extends Component {
         <div className="body">
           <div className="body-inner__wrapper">
             <VideoDetails mainVideoInfo={this.state.mainVideo} />
-            <CommentSection />
+            <CommentSection mainVideoInfo={this.state.mainVideo} />
             <CommentList mainVideoInfo={this.state.mainVideo} />
           </div>
           {/* passed down video data into side video component */}

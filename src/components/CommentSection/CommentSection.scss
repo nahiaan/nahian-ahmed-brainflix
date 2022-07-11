@@ -2,8 +2,12 @@
 @import "../../styles/partials/breakpoints";
 @import "../../styles/partials/resets";
 
-.comment__name--input,
-.comment__text--input {
+.comment-section__number {
+  font-family: "avenirnext-bold";
+  margin-left: 1.5rem;
+}
+.comment__name--input1,
+.comment__text--input1 {
   background-color: $Alabaster;
   width: 80vw;
   border: solid 2px rgba($color: #000000, $alpha: 0.1);
@@ -13,27 +17,45 @@
   @include desktop {
     width: 40vw;
   }
+
+  @include tablet {
+    width: 70vw;
+  }
 }
 
 @include desktop {
-  .comment__name,
-  .comment__box {
+  .comment__name1,
+  .comment__box1 {
+    display: none;
+  }
+}
+@include tablet {
+  .comment__name1,
+  .comment__box1 {
     display: none;
   }
 }
 
-.comment__name--input {
+.comment__name--input1 {
   height: 8vh;
   margin-bottom: 1rem;
 
   @include desktop {
-    width: 28vw;
-    margin-right: 2rem;
-    height: 7vh;
+    width: 39vw;
+    margin-right: 1rem;
+    margin-left: -1rem;
+    height: 6.5vh;
+  }
+
+  @include tablet {
+    width: 60vw;
+    margin-right: 1rem;
+    margin-left: -1rem;
+    height: 6.5vh;
   }
 }
 
-.comment__text--input {
+.comment__text--input1 {
   height: 22vh;
   margin-bottom: 2rem;
   padding-top: 1rem;
@@ -41,72 +63,116 @@
   @include desktop {
     display: none;
   }
+
+  @include tablet {
+    display: none;
+  }
 }
 
-.comment__content {
+.comment__content1 {
   display: flex;
   justify-content: center;
   border: 0;
 
-  // @include desktop {
-  //   display: flex;
-  // }
+  @include tablet {
+    justify-content: flex-start;
+  }
 }
 
-.comment-form__wrapper {
+.comment-form__wrapper1 {
   display: flex;
   flex-direction: column;
   font-family: avenirnext-bold;
   color: white;
-  padding-left: 1rem;
 
   @include desktop {
     flex-direction: row;
   }
+
+  @include tablet {
+    flex-direction: row;
+  }
 }
 
-.comment-img__container {
+.comment-img__container1 {
   background-image: url(/assets/Images/Mohan-muruge.jpg);
   width: 60px;
   height: 60px;
   border-radius: 50%;
   background-position: center center;
   background-size: cover;
-  margin-top: 2rem;
+  margin: 2rem 2rem 0 0;
 
   @include desktop {
-    margin-top: 0;
-    margin-right: 2rem;
+    margin: 0 3rem 0 1.5rem;
+    width: 50px;
+    height: 50px;
+  }
+
+  @include tablet {
+    margin: 0 3rem 0 1.5rem;
     width: 50px;
     height: 50px;
   }
 }
 
-.comment__button {
+.comment__button1 {
   @include button-template;
   font-size: 1.3rem;
   height: 7vh;
+  background-image: url(/assets/Icons/add_comment.svg);
+  background-repeat: no-repeat;
+  background-position: 0.5rem;
 
   @include desktop {
-    width: 10vw;
+    width: 12vw;
     font-size: 0.8rem;
-    height: 7vh;
+    height: 6.3vh;
+  }
+
+  @include tablet {
+    width: 18vw;
+    font-size: 0.8rem;
+    height: 6.3vh;
   }
 }
 
 @include desktop {
-  .form__title {
-    margin: 0 0 0.5rem 11rem;
+  .form__title1 {
+    margin: 0 0 0.5rem 8rem;
     color: $Silver;
     font-family: "avenirnext-bold";
     font-size: 0.9rem;
   }
 }
+
+@include tablet {
+  .form__title1 {
+    margin: 0 0 0.5rem 8rem;
+    color: $Silver;
+    font-family: "avenirnext-bold";
+    font-size: 0.9rem;
+  }
+}
+
 @include desktop {
-  .form__box {
+  .form__box1 {
     margin-top: 3rem;
   }
 }
+
+@include tablet {
+  .form__box1 {
+    margin-top: 3rem;
+  }
+}
+
+// // .form1 {
+// //   @include tablet {
+// //     width: 20%;
+// //   }
+// }
+
 ::placeholder {
   color: $BrainFlix-Black;
   padding-left: 10px;

@@ -1,15 +1,26 @@
 import React, { Component } from "react";
 import "./VideoUpload.scss";
 import bike from "../../assets/Images/bike.jpg";
+import "../../styles/main.scss";
+import "../../styles/partials/_resets.scss";
 
-const VideoUpload = () => {
+function VideoUpload(props) {
+  console.log(props);
+  const successfulResponse = () => {
+    alert("successful!");
+    props.history.push("/");
+  };
   return (
     <section className="comment-section">
       <section className="form">
-        <form className="form__box">
-          <h1 className="form__title">Upload Video </h1>
-          <h2 className="form__title">VIDEO THUMBNAIL</h2>
-          <img className="form__img" src={bike} alt="blue bike"></img>
+        <form className="form__box" onSubmit={successfulResponse}>
+          <hr className="form__divider"></hr>
+          {/* <div className="form__wrapper--desktop"></div> */}
+          <div className="form__wrapper">
+            <h1 className="form__title">Upload Video </h1>
+            <h2 className="form__title--sub">VIDEO THUMBNAIL</h2>
+            <img className="form__img" src={bike} alt="blue bike"></img>
+          </div>
           <fieldset className="comment__content">
             <div className="comment-form__wrapper">
               <label htmlFor="Name" className="comment__name">
@@ -31,12 +42,15 @@ const VideoUpload = () => {
                 placeholder="Add a new comment"
                 className="comment__text--input"
               ></textarea>
-              <button id="post" className="comment__button">
-                PUBLISH
-              </button>
-              <button id="post" className="comment__button">
-                CANCEL
-              </button>
+
+              <div className="comment__wrapper--button">
+                <button id="post" className="comment__button">
+                  PUBLISH
+                </button>
+                <button id="post" className="comment__button--cancel">
+                  CANCEL
+                </button>
+              </div>
             </div>
           </fieldset>
           <p className="panel__error panel__error--hide"></p>
@@ -47,5 +61,5 @@ const VideoUpload = () => {
       </section>
     </section>
   );
-};
+}
 export default VideoUpload;

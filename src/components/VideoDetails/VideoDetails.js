@@ -21,11 +21,11 @@ const VideoDetails = ({ mainVideoInfo }) => {
             By {mainVideoInfo.channel}
           </div>
           <div className="video-details__date2">{`${day}/${month}/${year}`}</div>
-          <div className="video-details__info">{mainVideoInfo.views}</div>
         </div>
         <div className="video-details__wrapper--inner">
-          <div className="video-details__date">{`${day}/${month}/${year}`}</div>
-          <div className="video-details__info">{mainVideoInfo.likes}</div>
+          <div className="video-details__info">{mainVideoInfo.views}</div>
+          {/* <div className="video-details__date">{`${day}/${month}/${year}`}</div> */}
+          <div className="video-details__likes">{mainVideoInfo.likes}</div>
         </div>
       </div>
       <div className="video-details__divider--wrapper">

@@ -17,12 +17,10 @@
     line-height: 3.5rem;
   }
 
-  @include desktop {
-    &__container {
-      display: flex;
-      border-bottom: solid $Mercury;
-      margin: 1rem 0;
-    }
+  &__container {
+    display: flex;
+    margin: 1rem 0;
+    justify-content: space-between;
   }
 
   @include tablet {
@@ -38,24 +36,31 @@
 
     @include desktop {
       margin-right: 0;
-      width: 150px;
+      padding-right: 1rem;
     }
 
     @include tablet {
       margin-right: 0;
-      width: 150px;
     }
   }
 
   &__wrapper--inner {
-    display: flex;
     padding: 0 0 0.5rem 0;
     font-size: 1.4rem;
-    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    width: 200px;
 
     @include desktop {
       margin-left: 0;
       font-size: 1rem;
+      display: flex;
+      flex-direction: row;
+    }
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+      margin-right: 100px;
     }
   }
 
@@ -73,54 +78,41 @@
   }
 
   &__info {
-    margin-right: 9rem;
+    background-image: url(/assets/Icons/views.svg);
+  }
 
-    @include desktop {
-      margin: 0 0 0 9rem;
-    }
-
-    @include tablet {
-      margin: 0 20rem 0 1rem;
-    }
+  &__likes {
+    background-image: url(/assets/Icons/likes.svg);
   }
 
   &__info,
-  &__date {
+  &__date,
+  &__likes {
     color: $Silver;
     letter-spacing: 0.5px;
+    background-repeat: no-repeat;
+    background-position: 0 20%;
+    padding-left: 2rem;
   }
+
   @include desktop {
     &__info {
-      margin-left: 1rem;
+      margin-right: 0.5rem;
+      background-position: 5% 0;
     }
 
-    @include tablet {
-      &__info {
-        margin-left: 1rem;
-      }
-    }
-  }
-
-  @include desktop {
-    &__date {
-      display: none;
-    }
-  }
-
-  @include mobile {
-    &__date2 {
-      display: none;
+    &__likes {
+      background-position: 10% 10%;
     }
   }
 
   @include tablet {
-    &__date2 {
-      display: none;
+    &__info {
+      margin-right: 2rem;
     }
   }
 
   &__date2 {
-    margin-right: 25rem;
     color: $Silver;
   }
   //AvenirNext-Bold styling

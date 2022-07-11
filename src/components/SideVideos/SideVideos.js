@@ -13,7 +13,7 @@ export const SideVideos = (props) => {
   return (
     <section className="side-videos">
       <>
-        <h3 className="side-videos__subtitle">Next Videos</h3>
+        <h3 className="side-videos__subtitle">NEXT VIDEOS</h3>
       </>
       {filteredVideoList.map((videoInfo) => {
         const videoId = videoInfo.id;

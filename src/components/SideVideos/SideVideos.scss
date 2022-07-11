@@ -21,6 +21,10 @@
 
   &__container {
     display: flex;
+
+    @include desktop {
+      margin-top: -2rem;
+    }
   }
 
   &__title {
@@ -35,14 +39,20 @@
   &__wrapper {
     align-self: center;
     font-size: 1rem;
+
+    @include desktop {
+      width: 200px;
+    }
   }
 
   &__subtitle {
     color: silver;
     font-family: "AvenirNext-bold";
+    letter-spacing: 1px;
 
     @include desktop {
-      margin: 4rem 0 0 1.5rem;
+      margin: 4rem 0 2rem 1.5rem;
+      font-size: 0.8rem;
     }
   }
 }

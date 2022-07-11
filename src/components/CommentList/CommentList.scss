@@ -10,6 +10,7 @@
   @include desktop {
     font-size: 0.8rem;
     line-height: 1.5rem;
+    margin-right: 0;
   }
   &-img__wrapper {
     background-image: url(../../assets/Images/light-grey-background.png);
@@ -31,6 +32,10 @@
     padding: 1.5rem 1rem 1rem 0;
     border-bottom: 0.8px solid $Mercury;
     border-top: 0.8px solid $Mercury;
+
+    @include tablet {
+      padding-right: 10px;
+    }
   }
 
   &__wrapper {

@@ -1,9 +1,197 @@
 @import "../../styles/main";
 @import "../../styles/partials/_resets";
 @import "../../styles/partials/templates";
+@import "../../styles/partials/breakpoints";
 
 .form__img {
-  width: 400px;
-  height: 400px;
+  width: 95%;
+  height: 300px;
   object-fit: cover;
+  border-radius: 5px;
+
+  @include tablet {
+    width: 72vw;
+    height: 330px;
+  }
+
+  @include desktop {
+    height: 200px;
+    width: 25vw;
+    height: 25vh;
+    margin-top: 0.5rem;
+  }
+}
+
+.form__divider {
+  border-color: white;
+  color: $Mercury;
+  padding-bottom: 2rem;
+
+  @include desktop {
+    display: none;
+  }
+}
+
+.form__wrapper {
+  margin-left: 1.5rem;
+}
+.form__title {
+  font-family: "avenirnext-bold";
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  @include tablet {
+    font-size: 3.5rem;
+    padding-bottom: 2rem;
+    border-bottom: solid 2px $Mercury;
+    margin-right: 1.5rem;
+  }
+
+  &--sub {
+    font-family: "avenirnext-bold";
+    font-size: 1.3rem;
+    color: $Silver;
+    margin-bottom: 0.5rem;
+
+    @include tablet {
+      display: none;
+    }
+
+    @include desktop {
+      margin: 0;
+    }
+  }
+}
+
+.comment__name {
+  margin-top: 2rem;
+
+  @include desktop {
+    margin-top: 5rem;
+  }
+}
+
+.comment-form__wrapper {
+  @include desktop {
+    margin-top: 3.9rem;
+    // margin-right: 100px;
+  }
+}
+
+.comment__box,
+.comment__name {
+  font-family: "avenirnext-bold";
+  color: $Silver;
+  font-size: 1.3rem;
+}
+
+.comment__button--cancel {
+  @include button-template;
+  background-color: white;
+  border: white;
+  color: $BrainFlix-Blue;
+  margin: 2rem 0 2rem 23%;
+
+  @include tablet {
+    margin: 0;
+    width: 20vw;
+    padding-right: 5rem;
+  }
+
+  @include desktop {
+    margin-top: 0;
+    height: 6.5vh;
+    font-size: 1rem;
+  }
+}
+
+.comment__button {
+  background-image: url(/assets/Icons/publish.svg);
+  background-repeat: no-repeat;
+  background-position: 0.5rem;
+  height: 9vh;
+  @include button-template;
+  width: 100%;
+
+  @include tablet {
+    width: 30%;
+  }
+  @include desktop {
+    width: 40%;
+    height: 6.5vh;
+    font-size: 1rem;
+  }
+}
+.comment__text--input {
+  height: 22vh;
+  margin-bottom: 2rem;
+  padding-top: 1rem;
+
+  @include desktop {
+    height: 15vh;
+  }
+}
+
+.comment__name--input {
+  height: 5vh;
+  margin-bottom: 1rem;
+
+  @include desktop {
+    height: 6vh;
+  }
+}
+
+.comment__name--input,
+.comment__text--input {
+  background-color: $Alabaster;
+  width: 100%;
+  border: solid 2px rgba($color: #000000, $alpha: 0.1);
+  border-radius: 5px;
+  font-size: 2rem;
+  display: block;
+
+  @include desktop {
+    width: 92%;
+  }
+}
+.comment__content {
+  border: none;
+}
+
+.comment__content {
+  @include margin-styling;
+}
+
+.comment__wrapper--button {
+  @include tablet {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  @include desktop {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-right: 4rem;
+  }
+}
+
+.form__box {
+  @include desktop {
+    display: flex;
+  }
+}
+
+.form {
+  @include desktop {
+    margin: 8rem 8rem 8rem 5.2rem;
+  }
+}
+.comment__section {
+  @include desktop {
+    margin: 4rem;
+  }
+}
+.comment__name,
+.comment__box,
+.form__title--sub {
+  font-size: 1rem;
 }
