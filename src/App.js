@@ -27,7 +27,7 @@ class App extends Component {
           <Route path="/" exact component={HomePage} />
           <Route
             path="/video/:videoId"
-            component={HomePage}
+            // component={HomePage}
             render={(renderProps) => <HomePage {...renderProps} />}
           />
           <Route path="/video-upload" component={VideoUpload} />

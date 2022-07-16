@@ -22,7 +22,8 @@ export default class HomePage extends Component {
   loadVideoData = () => {
     axios
       .get(
-        "https://project-2-api.herokuapp.com/videos?api_key=ffe0d61d-b430-491d-9649-c096b1d32fd3"
+        // "https://project-2-api.herokuapp.com/videos?api_key=ffe0d61d-b430-491d-9649-c096b1d32fd3"
+        "http://localhost:5050/api/videos"
       )
       .then((response) => {
         // console.log("get", response);
@@ -34,7 +35,8 @@ export default class HomePage extends Component {
       .then((id) => {
         axios
           .get(
-            `https://project-2-api.herokuapp.com/videos/${id}/?api_key=ffe0d61d-b430-491d-9649-c096b1d32fd3`
+            // `https://project-2-api.herokuapp.com/videos/${id}/?api_key=ffe0d61d-b430-491d-9649-c096b1d32fd3`
+            `http://localhost:5050/api/mainvideo/${id}`
           )
           .then((response) => {
             this.setState({
@@ -59,7 +61,8 @@ export default class HomePage extends Component {
     if (prevProps.match.params.videoId !== videoId) {
       axios
         .get(
-          "https://project-2-api.herokuapp.com/videos?api_key=ffe0d61d-b430-491d-9649-c096b1d32fd3"
+          // "https://project-2-api.herokuapp.com/videos?api_key=ffe0d61d-b430-491d-9649-c096b1d32fd3"
+          `http://localhost:5050/api/videos`
         )
         .then((response) => {
           this.setState({
@@ -68,7 +71,8 @@ export default class HomePage extends Component {
         });
       axios
         .get(
-          `https://project-2-api.herokuapp.com/videos/${videoId}/?api_key=ffe0d61d-b430-491d-9649-c096b1d32fd3`
+          // `https://project-2-api.herokuapp.com/videos/${videoId}/?api_key=ffe0d61d-b430-491d-9649-c096b1d32fd3`
+          `http://localhost:5050/api/mainvideo/${videoId}`
         )
         .then((response) => {
           this.setState({
@@ -139,7 +143,7 @@ export default class HomePage extends Component {
     return (
       <div>
         <div>
-          <MainVideo mainVideo1={this.state.mainVideo} />
+          <MainVideo mainVideo={this.state.mainVideo} />
           {/* <MainVideo video={firstVideo} /> */}
         </div>
         <div className="body">

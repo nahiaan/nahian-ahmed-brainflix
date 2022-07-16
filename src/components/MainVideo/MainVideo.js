@@ -5,10 +5,10 @@ const MainVideo = (props) => {
   return (
     <section className="video__container">
       <video
-        poster={props.mainVideo1.image} //why cnt i specify obj? image
+        poster={props.mainVideo.image} //why cnt i specify obj? image
         controls
         className="video"
-        src={props.mainVideo1}
+        src={props.mainVideo}
       ></video>
     </section>
   );

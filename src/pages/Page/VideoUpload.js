@@ -8,6 +8,8 @@ function VideoUpload(props) {
   console.log(props);
   const successfulResponse = () => {
     alert("successful!");
+    // get the values typed by the user in the form below
+    // call the back end api and also provide the values typed
     props.history.push("/");
   };
   return (
