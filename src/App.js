@@ -5,7 +5,7 @@ import VideoUpload from "./pages/Page/VideoUpload";
 import NotFound from "./components/NotFound/NotFound";
 import Header from "./components/Header/Header";
 import { BrowserRouter } from "react-router-dom";
-// import axios from "axios";
+import axios from "axios";
 // import MainVideo from "./components/MainVideo/MainVideo";
 // import VideoDetails from "./components/VideoDetails/VideoDetails";
 // import CommentSection from "./components/CommentSection/CommentSection";
@@ -18,19 +18,67 @@ import { BrowserRouter } from "react-router-dom";
 // import "./App.scss";
 
 class App extends Component {
+  loadVideoData = () => {
+    axios
+      .get(
+        // "https://project-2-api.herokuapp.com/videos?api_key=ffe0d61d-b430-491d-9649-c096b1d32fd3"
+        "http://localhost:5050/api/videos"
+      )
+      .then((response) => {
+        // console.log("get", response);
+        this.setState({
+          videos: response.data,
+        });
+        return response.data[0].id;
+      })
+      .then((id) => {
+        axios
+          .get(
+            // `https://project-2-api.herokuapp.com/videos/${id}/?api_key=ffe0d61d-b430-491d-9649-c096b1d32fd3`
+            `http://localhost:5050/api/mainvideo/${id}`
+          )
+          .then((response) => {
+            this.setState({
+              mainVideo: response.data,
+            });
+          })
+          .catch((err) => {
+            this.setState({
+              error: err.message,
+            });
+          });
+      });
+  };
+
   render() {
     return (
       <BrowserRouter>
         <Header />
         <Switch>
           <Redirect exact from="/home" to="/" />
-          <Route path="/" exact component={HomePage} />
+          <Route
+            path="/"
+            exact
+            render={(renderProps) => (
+              <HomePage loadVideoData={this.loadVideoData} {...renderProps} />
+            )}
+          />
           <Route
             path="/video/:videoId"
             // component={HomePage}
-            render={(renderProps) => <HomePage {...renderProps} />}
+            render={(renderProps) => (
+              <HomePage loadVideoData={this.loadVideoData} {...renderProps} />
+            )}
           />
-          <Route path="/video-upload" component={VideoUpload} />
+          <Route
+            path="/video-upload"
+            render={(renderProps) => (
+              <VideoUpload
+                // loadVideoData={this.loadVideoData}
+                {...renderProps}
+              />
+            )}
+          />
           {/* <Route component={NotFound} /> */}
         </Switch>
       </BrowserRouter>

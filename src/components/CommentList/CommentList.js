@@ -6,13 +6,13 @@ export const CommentList = (props) => {
 
   return (
     <section className="commentList">
-      {props.mainVideoInfo.comments.map((comment) => {
+      {props.mainVideoInfo.comments.map((comment, i) => {
         const date = new Date(comment.timestamp);
         const day = date.getDate();
         const month = date.getMonth();
         const year = date.getFullYear();
         return (
-          <article key={comment.id} className="commentList__container">
+          <article key={i} className="commentList__container">
             <div className="commentList-img__wrapper">
               <img />
             </div>

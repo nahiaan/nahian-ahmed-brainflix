@@ -2,7 +2,7 @@ import "./SideVideos.scss";
 import React from "react";
 import { Link } from "react-router-dom";
 
-export const SideVideos = (props) => {
+const SideVideos = (props) => {
   // Filter all the videos to exclude the main video
   const filteredVideoList = props.sideVideoList.filter((video) => {
     // If the video is NOT the same as the main video ID - Keep it.
@@ -20,7 +20,7 @@ export const SideVideos = (props) => {
 
         return (
           <div className="side-videos__container" id={videoId} key={videoId}>
-            <Link to={`/video/${videoInfo.id}`}>
+            <Link to={`/video/${videoId}`}>
               <img
                 className="side-videos__img"
                 id={videoId}
@@ -42,15 +42,17 @@ export const SideVideos = (props) => {
   );
 };
 
-<section>
-  {/* {props.sideVideoList.map((videoInfo) => {
+//<section>
+{
+  /* {props.sideVideoList.map((videoInfo) => {
 const videoThumbnail = () => {
   const handleClick = () => {
     console.log("it worked");
   };
   return <img onClick={handleClick()} src={videoInfo.image}></img>;
-}; */}
-</section>;
+}; */
+}
+//</section>;
 //what happened here was that my class component function in sidevideo.js was moved to
 /**app.js - and in there we added a state, and then after i did a state, i passed it as a prop
  * in sidevideos.js - i make a normal function, and pass a prop.

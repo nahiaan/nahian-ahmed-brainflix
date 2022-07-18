@@ -9,6 +9,7 @@ import React, { Component } from "react";
 import CommentList from "../../components/CommentList/CommentList";
 import "../../App.scss";
 import axios from "axios";
+import VideoUpload from "../Page/VideoUpload";
 
 export default class HomePage extends Component {
   //
@@ -52,9 +53,12 @@ export default class HomePage extends Component {
   };
 
   componentDidMount() {
+    // console.log("Homepage props", this.props);
     this.loadVideoData();
   }
-
+  //match and params is given by react to be able to monitor any changes in the prop
+  //two triggers: prop changes when you click on side vid list, this.set.state = it will also trigger a rerender of the page
+  //and it will trigger lifecycle method com did update
   componentDidUpdate(prevProps) {
     //destructure for current props id
     const { videoId } = this.props.match.params;
@@ -119,6 +123,7 @@ export default class HomePage extends Component {
   // };
 
   render() {
+    console.log("hello", this.state.mainVideo);
     //   const mainVideo = this.state.mainVideoinfo.find((video) => {
     //     video.id === this.state.mainVideoId;
     //   });

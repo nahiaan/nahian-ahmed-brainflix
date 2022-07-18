@@ -3,19 +3,70 @@ import "./VideoUpload.scss";
 import bike from "../../assets/Images/bike.jpg";
 import "../../styles/main.scss";
 import "../../styles/partials/_resets.scss";
+import axios from "axios";
 
 function VideoUpload(props) {
-  console.log(props);
-  const successfulResponse = () => {
+  console.log("VideoUpload props", props);
+  const successfulResponse = (e, props) => {
+    e.preventDefault();
     alert("successful!");
-    // get the values typed by the user in the form below
-    // call the back end api and also provide the values typed
-    props.history.push("/");
+    //props.history.push("/");
+    axios
+      .post("http://localhost:5050/api/videos", {
+        title: e.target.fullName.value,
+        description: e.target.comment.value,
+      })
+      .then((response) => {
+        //e() before then
+        console.log("post", response);
+        props.history.push("/home");
+        //  this.setState({
+        //   videos: response.updatedVideos,
+        // });
+        // didnt work: props.loadVideoData();
+
+        // axios
+        //   .get(
+        //     // "https://project-2-api.herokuapp.com/videos?api_key=ffe0d61d-b430-491d-9649-c096b1d32fd3"
+        //     "http://localhost:5050/api/videos"
+        //   )
+        //   .then((response) => {
+        //     // console.log("get", response);
+        //     this.setState({
+        //       videos: response.data,
+        //     });
+        //     return response.data[0].id;
+        //   })
+        //   .then((id) => {
+        //     axios
+        //       .get(
+        //         // `https://project-2-api.herokuapp.com/videos/${id}/?api_key=ffe0d61d-b430-491d-9649-c096b1d32fd3`
+        //         `http://localhost:5050/api/mainvideo/${id}`
+        //       )
+        //       .then((response) => {
+        //         this.setState({
+        //           mainVideo: response.data,
+        //         });
+        //         props.history.push("/");
+        //       })
+        //       .catch((err) => {
+        //         this.setState({
+        //           error: err.message,
+        //         });
+        //       });
+        //   });
+      })
+      .catch((error) => console.log(error));
+    // axios call ends here
   };
+
   return (
     <section className="comment-section">
       <section className="form">
-        <form className="form__box" onSubmit={successfulResponse}>
+        <form
+          className="form__box"
+          onSubmit={(e) => successfulResponse(e, props)}
+        >
           <hr className="form__divider"></hr>
           {/* <div className="form__wrapper--desktop"></div> */}
           <div className="form__wrapper">
