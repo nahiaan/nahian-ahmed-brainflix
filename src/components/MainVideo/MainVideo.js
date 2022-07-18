@@ -1,11 +1,10 @@
 import "./MainVideo.scss";
 
 const MainVideo = (props) => {
-  // console.log("mainvideo", props);
   return (
     <section className="video__container">
       <video
-        poster={props.mainVideo.image} //why cnt i specify obj? image
+        poster={props.mainVideo.image}
         controls
         className="video"
         src={props.mainVideo}

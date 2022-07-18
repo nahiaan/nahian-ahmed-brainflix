@@ -3,12 +3,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const SideVideos = (props) => {
-  // Filter all the videos to exclude the main video
   const filteredVideoList = props.sideVideoList.filter((video) => {
-    // If the video is NOT the same as the main video ID - Keep it.
     return video.id !== props.mainVideoId;
   });
-  //filter is a higher order function and takes a callback function as an argument.
 
   return (
     <section className="side-videos">
@@ -42,26 +39,4 @@ const SideVideos = (props) => {
   );
 };
 
-//<section>
-{
-  /* {props.sideVideoList.map((videoInfo) => {
-const videoThumbnail = () => {
-  const handleClick = () => {
-    console.log("it worked");
-  };
-  return <img onClick={handleClick()} src={videoInfo.image}></img>;
-}; */
-}
-//</section>;
-//what happened here was that my class component function in sidevideo.js was moved to
-/**app.js - and in there we added a state, and then after i did a state, i passed it as a prop
- * in sidevideos.js - i make a normal function, and pass a prop.
- *
- *
- *
- */
-
 export default SideVideos;
-
-// id={videoInfo.id}
-// onClick={props.fn} - inside img

@@ -31,7 +31,6 @@ const VideoDetails = ({ mainVideoInfo }) => {
       <div className="video-details__divider--wrapper">
         <hr className="video-details__divider"></hr>
       </div>
-      {/* <hr className="video-details__divider2"></hr> */}
       <div className="video-details__description">
         {mainVideoInfo.description}
       </div>
@@ -40,16 +39,3 @@ const VideoDetails = ({ mainVideoInfo }) => {
 };
 
 export default VideoDetails;
-
-// import "./VideoDetails.scss";
-// import React from "react";
-
-// const VideoDetails = () => {
-//   return (
-//     <section className="video-details">
-//       <div>test</div>
-//     </section>
-//   );
-// };
-
-// export default VideoDetails;

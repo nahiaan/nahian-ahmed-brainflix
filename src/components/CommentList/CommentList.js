@@ -2,8 +2,6 @@ import React from "react";
 import "./CommentList.scss";
 
 export const CommentList = (props) => {
-  // console.log(props);
-
   return (
     <section className="commentList">
       {props.mainVideoInfo.comments.map((comment, i) => {

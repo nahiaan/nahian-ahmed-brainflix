@@ -1,5 +1,4 @@
 import "./CommentSection.scss";
-// import CommentList from "./components/CommentList/CommentList";
 
 const CommentSection = (props) => {
   return (
